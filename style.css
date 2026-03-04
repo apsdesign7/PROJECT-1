@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: 12px;
+  color: #4fffb0;
+  text-shadow: 0 0 20px #4fffb0, 0 0 40px #4fffb066;
+}
+
+.score-board {
+  display: flex;
+  gap: 40px;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.score-board strong {
+  color: #4fffb0;
+  font-size: 1.2rem;
+}
+
+.canvas-wrapper {
+  position: relative;
+  border: 2px solid #4fffb033;
+  border-radius: 8px;
+  box-shadow: 0 0 30px #4fffb022, inset 0 0 30px #00000088;
+}
+
+canvas {
+  display: block;
+  border-radius: 6px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #000000bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+#overlay-text {
+  font-size: 1.2rem;
+  color: #4fffb0;
+  text-align: center;
+  text-shadow: 0 0 10px #4fffb0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.controls {
+  color: #555;
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.8;
+}
+
+kbd {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.mobile-controls {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.mobile-controls .row {
+  display: flex;
+  gap: 6px;
+}
+
+.mobile-controls button {
+  width: 56px;
+  height: 56px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #4fffb0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.mobile-controls button:active {
+  background: #2a2a2a;
+}
+
+@media (max-width: 500px) {
+  canvas {
+    width: 300px;
+    height: 300px;
+  }
+  .mobile-controls {
+    display: flex;
+  }
+  .controls {
+    display: none;
+  }
+}

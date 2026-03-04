@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SNAKE</h1>
+    <div class="score-board">
+      <span>Счёт: <strong id="score">0</strong></span>
+      <span>Рекорд: <strong id="highscore">0</strong></span>
+    </div>
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div id="overlay" class="overlay">
+        <p id="overlay-text">Нажми ПРОБЕЛ чтобы начать</p>
+      </div>
+    </div>
+    <div class="controls">
+      <p>Управление: <kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> или <kbd>WASD</kbd></p>
+      <p>Пауза: <kbd>ПРОБЕЛ</kbd></p>
+    </div>
+    <!-- Мобильные кнопки -->
+    <div class="mobile-controls">
+      <button id="btn-up">↑</button>
+      <div class="row">
+        <button id="btn-left">←</button>
+        <button id="btn-down">↓</button>
+        <button id="btn-right">→</button>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
